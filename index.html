@@ -9,9 +9,17 @@
 
 
       document.addEventListener("DOMContentLoaded", function() {
+
+        var backspaceBtn = document.querySelector('.backspace');
         document.addEventListener("keydown", function(){
           if(event.keyCode === 8) {
-            console.log('backspace');
+            backspaceBtn.classList.add('pulse')
+          }
+        });
+
+        document.addEventListener("keyup", function(){
+          if(event.keyCode === 8) {
+            backspaceBtn.classList.remove('pulse')
           }
         });
       });
